@@ -15,6 +15,8 @@ class MainViewController: UITableViewController {
     
     // Manage objects and update tasks
     var resultsController: NSFetchedResultsController<Tasks>!
+    var managedContext: NSManagedObjectContext!
+    
     
     let coreData = CoreDataStack()
     
@@ -69,37 +71,45 @@ class MainViewController: UITableViewController {
         // Configure Cell
         let task = resultsController.object(at: indexPath)
         cell.textLabel?.text = task.name
-        
         return cell
     }
     
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+        
             completion(true)
+            
         }
         action.image = UIImage(named:"trash.png")
         action.backgroundColor = .red
-
         return UISwipeActionsConfiguration(actions: [action])
     }
 
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
+        
         let action = UIContextualAction(style: .destructive, title: "Check") { (action, view, completion) in
             completion(true)
+            
+
         }
         action.image = UIImage(named:"check.png")
         action.backgroundColor = .green
+        
+        // Delete object
+        
 
-
-
+        
         return UISwipeActionsConfiguration(actions: [action])
     }
 
-   
+    // Long press to open edit task view
+    
+    @IBAction func openDetailView(_ sender: Any) {
+        performSegue(withIdentifier: "editTask", sender: self)
+    }
+    
     
     
 }

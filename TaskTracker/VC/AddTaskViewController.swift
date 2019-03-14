@@ -49,7 +49,7 @@ class AddTaskViewController: UIViewController {
         
         do {
             try managedContext.save()
-            //performSegue(withIdentifier: "finishSave", sender: self)
+            dismiss(animated: true)
             print("Save successful")
             view.resignFirstResponder()
         } catch  {
