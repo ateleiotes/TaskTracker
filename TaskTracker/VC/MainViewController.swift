@@ -16,6 +16,7 @@ class MainViewController: UITableViewController {
     // Manage objects and update tasks
     var resultsController: NSFetchedResultsController<Tasks>!
     var managedContext: NSManagedObjectContext!
+    var tasksArray = [NSManagedObject]()
     
     
     let coreData = CoreDataStack()
@@ -37,6 +38,7 @@ class MainViewController: UITableViewController {
         } catch  {
             print("Error performing fetch: \(error)")
         }
+        
         
     }
     
@@ -72,6 +74,7 @@ class MainViewController: UITableViewController {
         let task = resultsController.object(at: indexPath)
         cell.textLabel?.text = task.name
         return cell
+        
     }
     
     // MARK: - Table view delegate
@@ -97,10 +100,6 @@ class MainViewController: UITableViewController {
         action.image = UIImage(named:"check.png")
         action.backgroundColor = .green
         
-        // Delete object
-        
-
-        
         return UISwipeActionsConfiguration(actions: [action])
     }
 
@@ -110,6 +109,19 @@ class MainViewController: UITableViewController {
         performSegue(withIdentifier: "editTask", sender: self)
     }
     
+    // Delete
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            managedContext.delete(self.tasksArray[indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+            tableView.reloadData()
+        }
+    }
     
 }
