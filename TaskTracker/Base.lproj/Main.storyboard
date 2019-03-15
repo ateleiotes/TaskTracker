@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dhi-NF-I4l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dhi-NF-I4l">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.43"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="Dhi-NF-I4l" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="OIJ-Dv-P2E">
-                        <rect key="frame" x="0.0" y="20" width="375" height="103.5"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.13520961999893188" green="0.46577483415603638" blue="0.79322999715805054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="largeTitleTextAttributes">
@@ -51,7 +51,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="New Task" leftItemsSupplementBackButton="YES" id="bp0-ic-jBm">
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" style="plain" id="A2E-v9-bsP">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" style="done" id="A2E-v9-bsP">
                                             <color key="tintColor" red="0.31188654900000001" green="0.77251851559999996" blue="0.94553798440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="cancel:" destination="AXQ-sY-hEy" id="fNT-pT-8p8"/>
@@ -140,6 +140,32 @@
             </objects>
             <point key="canvasLocation" x="1846" y="-893"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Qhy-Sh-Eww">
+            <objects>
+                <viewController id="je2-lU-3ji" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OFq-rl-xYa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcY-Fb-2ad">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FcY-Fb-2ad" firstAttribute="top" secondItem="DWk-qD-Y4I" secondAttribute="top" id="RZu-Le-Sqp"/>
+                            <constraint firstAttribute="trailing" secondItem="FcY-Fb-2ad" secondAttribute="trailing" id="g2I-B5-KPp"/>
+                            <constraint firstItem="FcY-Fb-2ad" firstAttribute="leading" secondItem="OFq-rl-xYa" secondAttribute="leading" id="k0Z-tu-rTm"/>
+                            <constraint firstItem="FcY-Fb-2ad" firstAttribute="bottom" secondItem="DWk-qD-Y4I" secondAttribute="bottom" id="mFv-jv-RKC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DWk-qD-Y4I"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXT-9h-zRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085.5999999999999" y="235.23238380809596"/>
+        </scene>
         <!--AllTasks-->
         <scene sceneID="kMc-DQ-EZc">
             <objects>
@@ -148,6 +174,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Task" id="BJf-qC-s49" userLabel="Task">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -159,6 +186,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="X3R-b8-qAs" appends="YES" id="qcR-kQ-eZm"/>
+                                    <outletCollection property="gestureRecognizers" destination="24m-lW-TzX" appends="YES" id="i78-H4-C26"/>
                                     <segue destination="hN9-cW-I9R" kind="presentation" identifier="editTask" id="SSh-Du-grP"/>
                                 </connections>
                             </tableViewCell>
@@ -169,12 +197,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="All Tasks" id="67l-wP-8NM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="85h-CJ-ZeN">
-                            <color key="tintColor" red="0.31188654900000001" green="0.77251851559999996" blue="0.94553798440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="AXQ-sY-hEy" kind="presentation" identifier="addTask" id="BMz-3I-rQV"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="help2" style="plain" id="kze-dJ-8p8" userLabel="Help">
+                                <color key="tintColor" red="0.80453067840000003" green="0.99165914389999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="85h-CJ-ZeN">
+                                <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="AXQ-sY-hEy" kind="presentation" identifier="addTask" id="BMz-3I-rQV"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0C-JZ-GBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -183,6 +217,12 @@
                         <action selector="openDetailView:" destination="zZV-8H-RV0" id="Mrn-hu-3Na"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="24m-lW-TzX">
+                    <connections>
+                        <action selector="openDetails:" destination="zZV-8H-RV0" id="Nku-n1-aSF"/>
+                        <segue destination="GQq-ZA-NZ1" kind="showDetail" identifier="detailsSegue" id="w66-qK-o4w"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1086" y="-457"/>
         </scene>
@@ -206,7 +246,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Edit Task" leftItemsSupplementBackButton="YES" id="sGY-pA-BKv">
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" style="plain" id="sUL-cs-W0y">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" style="done" id="sUL-cs-W0y">
                                             <color key="tintColor" red="0.31188654900000001" green="0.77251851559999996" blue="0.94553798440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="cancelEdit:" destination="hN9-cW-I9R" id="Nz9-54-HwX"/>
@@ -294,7 +334,96 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5K8-jK-iZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="-457"/>
+            <point key="canvasLocation" x="1846" y="-226"/>
+        </scene>
+        <!--DetailsViewController-->
+        <scene sceneID="9Rl-OQ-8Nc">
+            <objects>
+                <viewController id="GQq-ZA-NZ1" userLabel="DetailsViewController" customClass="DetailsViewController" customModule="TaskTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G4w-Dx-soX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jv-pC-PiE">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.31188654900000001" green="0.77251851559999996" blue="0.94553798440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="24"/>
+                                    <color key="textColor" red="0.31188654900000001" green="0.77251851559999996" blue="0.94553798440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Task Title" leftItemsSupplementBackButton="YES" id="Zah-AP-7Dy">
+                                        <barButtonItem key="rightBarButtonItem" title="Back" style="done" id="1kA-mR-DEm">
+                                            <color key="tintColor" red="0.31188654900000001" green="0.77251851559999996" blue="0.94553798440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="cancelEdit:" destination="hN9-cW-I9R" id="bfX-F8-B4S"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uhm-88-ffp">
+                                <rect key="frame" x="40" y="212" width="297" height="393"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="zEL-nC-IC3">
+                                <rect key="frame" x="0.0" y="76" width="375" height="128"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="Lgz-RA-VOP">
+                                <rect key="frame" x="88" y="605" width="201" height="44"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <items>
+                                    <barButtonItem width="25" systemItem="camera" id="xP2-Co-2vS"/>
+                                    <barButtonItem systemItem="add" id="tZr-2e-oFj"/>
+                                    <barButtonItem image="undo" landscapeImage="undo" id="797-3v-JgV"/>
+                                    <barButtonItem image="redo" landscapeImage="redo" width="20" id="1xG-b7-yo4"/>
+                                    <barButtonItem systemItem="save" id="Xlc-Ar-igp">
+                                        <inset key="largeContentSizeImageInsets" minX="1" minY="1" maxX="0.0" maxY="0.0"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.31188654900000001" green="0.77251851559999996" blue="0.94553798440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zEL-nC-IC3" firstAttribute="trailing" secondItem="8jv-pC-PiE" secondAttribute="trailing" id="1bd-x4-PmT"/>
+                            <constraint firstItem="8jv-pC-PiE" firstAttribute="top" secondItem="GCe-T1-IaQ" secondAttribute="top" id="6RK-vN-aji"/>
+                            <constraint firstItem="Lgz-RA-VOP" firstAttribute="leading" secondItem="GCe-T1-IaQ" secondAttribute="leading" constant="88" id="6a2-zJ-usN"/>
+                            <constraint firstItem="uhm-88-ffp" firstAttribute="top" secondItem="zEL-nC-IC3" secondAttribute="bottom" constant="8" symbolic="YES" id="Bcb-Dx-wOD"/>
+                            <constraint firstAttribute="trailing" secondItem="8jv-pC-PiE" secondAttribute="trailing" id="E5w-S9-g4W"/>
+                            <constraint firstItem="zEL-nC-IC3" firstAttribute="leading" secondItem="8jv-pC-PiE" secondAttribute="leading" id="FLd-1i-qES"/>
+                            <constraint firstItem="uhm-88-ffp" firstAttribute="leading" secondItem="GCe-T1-IaQ" secondAttribute="leading" constant="40" id="UH8-Nw-6Rp"/>
+                            <constraint firstItem="GCe-T1-IaQ" firstAttribute="trailing" secondItem="uhm-88-ffp" secondAttribute="trailing" constant="38" id="V3D-1F-9Wi"/>
+                            <constraint firstItem="Lgz-RA-VOP" firstAttribute="centerX" secondItem="uhm-88-ffp" secondAttribute="centerX" id="ea6-BL-j7m"/>
+                            <constraint firstItem="uhm-88-ffp" firstAttribute="top" secondItem="8jv-pC-PiE" secondAttribute="bottom" constant="148" id="pOe-eO-N9m"/>
+                            <constraint firstItem="Lgz-RA-VOP" firstAttribute="top" secondItem="uhm-88-ffp" secondAttribute="bottom" id="qSO-gj-Lh3"/>
+                            <constraint firstItem="8jv-pC-PiE" firstAttribute="leading" secondItem="G4w-Dx-soX" secondAttribute="leading" id="r2c-2k-ZEg"/>
+                            <constraint firstItem="zEL-nC-IC3" firstAttribute="top" secondItem="8jv-pC-PiE" secondAttribute="bottom" constant="12" id="xzo-SS-TYZ"/>
+                            <constraint firstItem="uhm-88-ffp" firstAttribute="bottom" secondItem="GCe-T1-IaQ" secondAttribute="bottom" constant="-62" id="yyF-8z-CH8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GCe-T1-IaQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="botTabBar" destination="Lgz-RA-VOP" id="OCE-Td-1Lz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJJ-CW-nej" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085.5999999999999" y="-1146.4767616191905"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1" width="950" height="482"/>
+        <image name="help2" width="24" height="24"/>
+        <image name="redo" width="24" height="24"/>
+        <image name="undo" width="24" height="24"/>
+    </resources>
 </document>

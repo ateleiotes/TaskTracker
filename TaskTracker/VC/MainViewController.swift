@@ -25,6 +25,7 @@ class MainViewController: UITableViewController {
         super.viewDidLoad()
         
         
+        
         let request: NSFetchRequest<Tasks> = Tasks.fetchRequest()
         // Sort by date
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
@@ -41,6 +42,7 @@ class MainViewController: UITableViewController {
         
         
     }
+    
     
     // MARK: - Navigation
     
@@ -80,13 +82,14 @@ class MainViewController: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+
         
-            completion(true)
-            
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, success) in
+            success(true)
         }
         action.image = UIImage(named:"trash.png")
         action.backgroundColor = .red
+        
         return UISwipeActionsConfiguration(actions: [action])
     }
 
@@ -94,8 +97,6 @@ class MainViewController: UITableViewController {
         
         let action = UIContextualAction(style: .destructive, title: "Check") { (action, view, completion) in
             completion(true)
-            
-
         }
         action.image = UIImage(named:"check.png")
         action.backgroundColor = .green
@@ -115,13 +116,22 @@ class MainViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
             tableView.beginUpdates()
             managedContext.delete(self.tasksArray[indexPath.row])
             tableView.deleteRows(at: [indexPath], with: .fade)
+            do {
+                try managedContext.save()
+                self.tasksArray.removeAll()
+                tableView.reloadData()
+                print("Save successful")
+            } catch  {
+                print("Error performing fetch: \(error)")
+            }
             tableView.endUpdates()
-            tableView.reloadData()
-        }
+    
+    }
+    @IBAction func openDetails(_ sender: Any) {
+        performSegue(withIdentifier: "detailsSegue", sender: self)
     }
     
 }

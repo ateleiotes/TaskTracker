@@ -16,6 +16,7 @@
 		AB7C3C61223A86A9009B78B3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C3C60223A86A9009B78B3 /* MainViewController.swift */; };
 		AB7C3C63223A86C1009B78B3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C3C62223A86C1009B78B3 /* CoreDataStack.swift */; };
 		AB7C3C65223AB610009B78B3 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C3C64223AB610009B78B3 /* EditTaskViewController.swift */; };
+		ABF5505C223C2B3C0037A5D1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF5505B223C2B3C0037A5D1 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AB7C3C60223A86A9009B78B3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AB7C3C62223A86C1009B78B3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AB7C3C64223AB610009B78B3 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
+		ABF5505B223C2B3C0037A5D1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				AB7C3C5E223A8687009B78B3 /* AddTaskViewController.swift */,
 				AB7C3C60223A86A9009B78B3 /* MainViewController.swift */,
 				AB7C3C64223AB610009B78B3 /* EditTaskViewController.swift */,
+				ABF5505B223C2B3C0037A5D1 /* DetailsViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				AB7C3C65223AB610009B78B3 /* EditTaskViewController.swift in Sources */,
 				AB7C3C4D223A83A7009B78B3 /* TaskTracker.xcdatamodeld in Sources */,
 				AB7C3C5F223A8687009B78B3 /* AddTaskViewController.swift in Sources */,
+				ABF5505C223C2B3C0037A5D1 /* DetailsViewController.swift in Sources */,
 				AB7C3C45223A83A7009B78B3 /* AppDelegate.swift in Sources */,
 				AB7C3C61223A86A9009B78B3 /* MainViewController.swift in Sources */,
 			);
