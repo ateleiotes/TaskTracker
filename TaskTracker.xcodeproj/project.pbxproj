@@ -18,6 +18,8 @@
 		AB7C3C65223AB610009B78B3 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C3C64223AB610009B78B3 /* EditTaskViewController.swift */; };
 		ABF5505C223C2B3C0037A5D1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF5505B223C2B3C0037A5D1 /* DetailsViewController.swift */; };
 		ABF5505E223C34DF0037A5D1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF5505D223C34DF0037A5D1 /* HelpViewController.swift */; };
+		ABF55062223C50ED0037A5D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF55061223C50ED0037A5D1 /* LoginViewController.swift */; };
+		ABF55064223C51080037A5D1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF55063223C51080037A5D1 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		AB7C3C64223AB610009B78B3 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 		ABF5505B223C2B3C0037A5D1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		ABF5505D223C34DF0037A5D1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		ABF55061223C50ED0037A5D1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ABF55063223C51080037A5D1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				AB7C3C64223AB610009B78B3 /* EditTaskViewController.swift */,
 				ABF5505B223C2B3C0037A5D1 /* DetailsViewController.swift */,
 				ABF5505D223C34DF0037A5D1 /* HelpViewController.swift */,
+				ABF55061223C50ED0037A5D1 /* LoginViewController.swift */,
+				ABF55063223C51080037A5D1 /* RegistrationViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -169,9 +175,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF55062223C50ED0037A5D1 /* LoginViewController.swift in Sources */,
 				AB7C3C63223A86C1009B78B3 /* CoreDataStack.swift in Sources */,
 				AB7C3C65223AB610009B78B3 /* EditTaskViewController.swift in Sources */,
 				AB7C3C4D223A83A7009B78B3 /* TaskTracker.xcdatamodeld in Sources */,
+				ABF55064223C51080037A5D1 /* RegistrationViewController.swift in Sources */,
 				ABF5505E223C34DF0037A5D1 /* HelpViewController.swift in Sources */,
 				AB7C3C5F223A8687009B78B3 /* AddTaskViewController.swift in Sources */,
 				ABF5505C223C2B3C0037A5D1 /* DetailsViewController.swift in Sources */,

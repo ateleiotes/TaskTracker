@@ -24,8 +24,6 @@ class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         let request: NSFetchRequest<Tasks> = Tasks.fetchRequest()
         // Sort by date
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
@@ -71,10 +69,10 @@ class MainViewController: UITableViewController {
     // Set up cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Task", for: indexPath)
-        
         // Configure Cell
         let task = resultsController.object(at: indexPath)
         cell.textLabel?.text = task.name
+        cell.textLabel?.textColor = UIColor.white
         return cell
         
     }
@@ -137,4 +135,9 @@ class MainViewController: UITableViewController {
     @IBAction func showHelp(_ sender: Any) {
         performSegue(withIdentifier: "showHelp", sender: self)
     }
+    
+    @IBAction func logout(_ sender: Any) {
+        performSegue(withIdentifier: "logout", sender: self)
+    }
+    
 }
