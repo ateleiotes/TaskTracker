@@ -140,24 +140,106 @@
             </objects>
             <point key="canvasLocation" x="1846" y="-893"/>
         </scene>
-        <!--View Controller-->
+        <!--HelpViewController-->
         <scene sceneID="Qhy-Sh-Eww">
             <objects>
-                <viewController id="je2-lU-3ji" sceneMemberID="viewController">
+                <viewController id="je2-lU-3ji" userLabel="HelpViewController" customClass="HelpViewController" customModule="TaskTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OFq-rl-xYa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcY-Fb-2ad">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="88" translatesAutoresizingMaskIntoConstraints="NO" id="CWG-1n-Hkj" userLabel="AddTask">
+                                <rect key="frame" x="19" y="70" width="337" height="498"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gNp-2u-oyK">
+                                        <rect key="frame" x="0.0" y="0.0" width="337" height="130"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Add Task Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suJ-c9-wC6">
+                                                <rect key="frame" x="0.0" y="55" width="168.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" editable="NO" text="Double tap the task to which you want to add details" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVO-w4-36k">
+                                                <rect key="frame" x="168.5" y="0.0" width="168.5" height="130"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="UVO-w4-36k" firstAttribute="top" secondItem="gNp-2u-oyK" secondAttribute="top" id="aC6-oh-FuD"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dr3-ki-oav" userLabel="EditTask">
+                                        <rect key="frame" x="0.0" y="218" width="337" height="103"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Edit Task " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGp-YN-XUP">
+                                                <rect key="frame" x="0.0" y="15" width="168.5" height="73"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" editable="NO" text="Tap and hold the task you wish to edit" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UY-ng-EvK">
+                                                <rect key="frame" x="168.5" y="0.0" width="168.5" height="103"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="9UY-ng-EvK" firstAttribute="top" secondItem="dr3-ki-oav" secondAttribute="top" id="fuM-Sr-1UC"/>
+                                            <constraint firstItem="AGp-YN-XUP" firstAttribute="top" secondItem="dr3-ki-oav" secondAttribute="top" constant="15" id="oso-Ih-ONq"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TeP-cj-UAK" userLabel="EditTask">
+                                        <rect key="frame" x="0.0" y="409" width="337" height="89"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWG-pe-0wP">
+                                                <rect key="frame" x="0.0" y="35" width="168.5" height="19"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" editable="NO" text="You can open camera to take a picture. Add a picture from gallery; Undo and redo changes." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDs-HY-rlh">
+                                                <rect key="frame" x="168.5" y="0.0" width="168.5" height="89"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lWG-pe-0wP" firstAttribute="top" secondItem="TeP-cj-UAK" secondAttribute="top" constant="35" id="8hc-iV-M2L"/>
+                                            <constraint firstItem="sDs-HY-rlh" firstAttribute="top" secondItem="TeP-cj-UAK" secondAttribute="top" id="x05-Xe-LkH"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dr3-ki-oav" firstAttribute="top" secondItem="CWG-1n-Hkj" secondAttribute="top" constant="218" id="HRa-Ce-C8Z"/>
+                                    <constraint firstItem="TeP-cj-UAK" firstAttribute="top" secondItem="CWG-1n-Hkj" secondAttribute="top" constant="409" id="wNj-jR-rVX"/>
+                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGw-CB-GZm">
+                                <rect key="frame" x="155" y="593" width="72" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" red="0.31188654900000001" green="0.77251851559999996" blue="0.94553798440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeHelp:" destination="je2-lU-3ji" eventType="touchUpInside" id="8vA-wb-cIl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FcY-Fb-2ad" firstAttribute="top" secondItem="DWk-qD-Y4I" secondAttribute="top" id="RZu-Le-Sqp"/>
-                            <constraint firstAttribute="trailing" secondItem="FcY-Fb-2ad" secondAttribute="trailing" id="g2I-B5-KPp"/>
-                            <constraint firstItem="FcY-Fb-2ad" firstAttribute="leading" secondItem="OFq-rl-xYa" secondAttribute="leading" id="k0Z-tu-rTm"/>
-                            <constraint firstItem="FcY-Fb-2ad" firstAttribute="bottom" secondItem="DWk-qD-Y4I" secondAttribute="bottom" id="mFv-jv-RKC"/>
+                            <constraint firstItem="CWG-1n-Hkj" firstAttribute="centerX" secondItem="OFq-rl-xYa" secondAttribute="centerX" id="Sms-EJ-UBG"/>
+                            <constraint firstItem="CWG-1n-Hkj" firstAttribute="top" secondItem="DWk-qD-Y4I" secondAttribute="top" constant="50" id="YuN-Ee-wwe"/>
+                            <constraint firstItem="DWk-qD-Y4I" firstAttribute="bottom" secondItem="CWG-1n-Hkj" secondAttribute="bottom" constant="99" id="kWp-8v-c1w"/>
+                            <constraint firstItem="CWG-1n-Hkj" firstAttribute="leading" secondItem="DWk-qD-Y4I" secondAttribute="leading" constant="19" id="wbt-Cz-fzx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DWk-qD-Y4I"/>
                     </view>
@@ -200,6 +282,10 @@
                         <rightBarButtonItems>
                             <barButtonItem image="help2" style="plain" id="kze-dJ-8p8" userLabel="Help">
                                 <color key="tintColor" red="0.80453067840000003" green="0.99165914389999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="showHelp:" destination="zZV-8H-RV0" id="Bpc-dN-0QU"/>
+                                    <segue destination="je2-lU-3ji" kind="presentation" identifier="showHelp" id="IWm-TP-Lce"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="85h-CJ-ZeN">
                                 <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>

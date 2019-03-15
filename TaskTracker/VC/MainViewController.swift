@@ -134,4 +134,7 @@ class MainViewController: UITableViewController {
         performSegue(withIdentifier: "detailsSegue", sender: self)
     }
     
+    @IBAction func showHelp(_ sender: Any) {
+        performSegue(withIdentifier: "showHelp", sender: self)
+    }
 }
