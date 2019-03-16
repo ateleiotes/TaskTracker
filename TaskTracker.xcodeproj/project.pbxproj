@@ -20,6 +20,7 @@
 		ABF5505E223C34DF0037A5D1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF5505D223C34DF0037A5D1 /* HelpViewController.swift */; };
 		ABF55062223C50ED0037A5D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF55061223C50ED0037A5D1 /* LoginViewController.swift */; };
 		ABF55064223C51080037A5D1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF55063223C51080037A5D1 /* RegistrationViewController.swift */; };
+		ABF55066223C789F0037A5D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF55065223C789F0037A5D1 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		ABF5505D223C34DF0037A5D1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		ABF55061223C50ED0037A5D1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ABF55063223C51080037A5D1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		ABF55065223C789F0037A5D1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		AB7C3C38223A83A7009B78B3 = {
 			isa = PBXGroup;
 			children = (
+				ABF55065223C789F0037A5D1 /* Default-568h@2x.png */,
 				AB7C3C43223A83A7009B78B3 /* TaskTracker */,
 				AB7C3C42223A83A7009B78B3 /* Products */,
 			);
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB7C3C52223A83A9009B78B3 /* LaunchScreen.storyboard in Resources */,
+				ABF55066223C789F0037A5D1 /* Default-568h@2x.png in Resources */,
 				AB7C3C4F223A83A9009B78B3 /* Assets.xcassets in Resources */,
 				AB7C3C4A223A83A7009B78B3 /* Main.storyboard in Resources */,
 			);
