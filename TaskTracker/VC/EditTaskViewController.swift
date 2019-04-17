@@ -22,8 +22,8 @@ class EditTaskViewController: UIViewController {
     var resultsController: NSFetchedResultsController<Tasks>!
     
     // MARK: - Properties
+
     // Manage objects and update tasks
-    //var resultsController: NSFetchedResultsController<Tasks>!
     var managedContext: NSManagedObjectContext!
     var tasksArray = [NSManagedObject]()
     var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks")
@@ -44,7 +44,6 @@ class EditTaskViewController: UIViewController {
     
     func settextfields() {
         let res = resultsController.fetchedObjects!
-        print(taskName)
         for r in res {
             i+=1
             if r.name == taskName {

@@ -11,7 +11,6 @@ import CoreData
 
 
 class AddTaskViewController: UIViewController {
-    let instanceofMain = MainViewController()
     
     @IBOutlet weak var txt_name: UITextField!
     @IBOutlet weak var txt_date: UITextField!
@@ -51,7 +50,6 @@ class AddTaskViewController: UIViewController {
         
         do {
             try managedContext.save()
-            instanceofMain.tableView.reloadData()
             dismiss(animated: true)
             print("Save successful")
             view.resignFirstResponder()
@@ -59,19 +57,8 @@ class AddTaskViewController: UIViewController {
             print("Error saving task: \(error)")
         }
     }
-    
-    
-    }
+}
 
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 
     
 

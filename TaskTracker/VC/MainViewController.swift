@@ -28,6 +28,13 @@ class MainViewController: UITableViewController {
         loadTable()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView = tableView
+        print(tableView)
+        loadTable()
+        tableView.reloadData()
+    }
     
     func loadTable() {
         let request: NSFetchRequest<Tasks> = Tasks.fetchRequest()
