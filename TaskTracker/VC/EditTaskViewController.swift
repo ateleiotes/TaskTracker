@@ -36,7 +36,7 @@ class EditTaskViewController: UIViewController {
         view.becomeFirstResponder()
         loadTable()
         settextfields()
-       
+        
         
         
         
@@ -44,8 +44,9 @@ class EditTaskViewController: UIViewController {
     
     func settextfields() {
         let res = resultsController.fetchedObjects!
-        print(res)
+        print(taskName)
         for r in res {
+            i+=1
             if r.name == taskName {
                 txt_name.text = "\(r.name ?? "Task name" )"
                 txt_date.text = "\(r.date ?? "Task date")"
@@ -70,60 +71,51 @@ class EditTaskViewController: UIViewController {
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     @IBAction func cancelEdit(_ sender: Any) {
         dismiss(animated: true)
         view.resignFirstResponder()
     }
     @IBAction func saveEdit(_ sender: Any) {
-                guard let name = txt_name.text, !name.isEmpty else {
-                    return
-                }
+        guard let name = txt_name.text, !name.isEmpty else {
+            return
+        }
         
-                guard let date = txt_date.text, !date.isEmpty else {
-                    return
-                }
+        guard let date = txt_date.text, !date.isEmpty else {
+            return
+        }
         
         
         do {
-            loadTable()
-             let res = resultsController.fetchedObjects!
-                for r in res {
-                    i += 1
-                    if r.name == taskName {
-                        print(r)
-                        guard let name = txt_name.text, !name.isEmpty else {
-                            return
-                        }
-                        guard let date = txt_date.text, !date.isEmpty else {
-                            return
-                        }
-                        do {
-                            r.name = name
-                            r.date = date
-                            r.priority = Int16(segmentedBtn.selectedSegmentIndex)
-                        }
-                       
-                        do {
-                            try managedContext.save()
-                            print(managedContext, r)
-                            dismiss(animated: true)
-                            print("Edit Successful!")
-                        } catch  {
-                            print("Error saving task: \(error)")
-                        }
-                    }
+            let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Tasks")
+            fetchRequest.predicate = NSPredicate(format: "name = %@", taskName)
+            let test = try managedContext.fetch(fetchRequest)
+            let obj = test[0] as! NSManagedObject
+            
+            obj.setValue(name, forKey: "name")
+            obj.setValue(date, forKey: "date")
+            obj.setValue(Int16(segmentedBtn.selectedSegmentIndex), forKey: "priority")
+            
+            
+            do {
+                try managedContext.save()
+                dismiss(animated: true)
+                print("Edit Successful!")
+            } catch  {
+                print("Error saving task: \(error)")
             }
-        
+        } catch {
+            print(error)
         }
-        
     }
-
+    
 }
+
+
