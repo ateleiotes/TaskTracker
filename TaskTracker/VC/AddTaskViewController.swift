@@ -9,8 +9,10 @@
 import UIKit
 import CoreData
 
+
 class AddTaskViewController: UIViewController {
-   
+    let instanceofMain = MainViewController()
+    
     @IBOutlet weak var txt_name: UITextField!
     @IBOutlet weak var txt_date: UITextField!
     @IBOutlet weak var segmentedBtn: UISegmentedControl!
@@ -49,6 +51,7 @@ class AddTaskViewController: UIViewController {
         
         do {
             try managedContext.save()
+            instanceofMain.tableView.reloadData()
             dismiss(animated: true)
             print("Save successful")
             view.resignFirstResponder()
@@ -56,7 +59,10 @@ class AddTaskViewController: UIViewController {
             print("Error saving task: \(error)")
         }
     }
+    
+    
     }
+
     /*
      // MARK: - Navigation
      

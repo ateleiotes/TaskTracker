@@ -2,7 +2,6 @@
 //  MainViewController.swift
 //  TaskTracker
 //
-//  Created by Margo on 2019-03-14.
 //  Copyright © 2019 Gbc. All rights reserved.
 //
 
@@ -10,7 +9,10 @@ import UIKit
 import CoreData
 
 class MainViewController: UITableViewController {
-    
+    var taskId:String!
+    var indexPath: NSIndexPath!
+    var name:String!
+
     // MARK: - Properties
     
     // Manage objects and update tasks
@@ -23,7 +25,11 @@ class MainViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadTable()
         
+    }
+    
+    func loadTable() {
         let request: NSFetchRequest<Tasks> = Tasks.fetchRequest()
         // Sort by date
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
@@ -37,19 +43,37 @@ class MainViewController: UITableViewController {
         } catch  {
             print("Error performing fetch: \(error)")
         }
-        
-        
     }
-    
     
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         // Initialize managedContext
         if let _ = sender as? UIBarButtonItem, let vc = segue.destination as? AddTaskViewController {
             vc.managedContext = coreData.managedContext
+        }
+       
+        if segue.identifier == "editTask" {
+            let indexPath = tableView.indexPathForSelectedRow //optional, to get from any UIButton for example
+            let currentCell = tableView.cellForRow(at: indexPath as! IndexPath) as UITableViewCell?
+            
+            
+            
+            let res = resultsController.fetchedObjects!
+            for r in res {
+                if r.name == currentCell?.textLabel!.text {
+                     name = r.name
+                }
+               
+            }
+            if let ed = segue.destination as? EditTaskViewController,
+                let taskId = name{
+                ed.taskName = taskId
+                ed.managedContext = coreData.managedContext
+            }
+        
         }
         
     }
@@ -74,6 +98,7 @@ class MainViewController: UITableViewController {
         cell.textLabel?.text = task.name
         cell.textLabel?.textColor = UIColor.white
         return cell
+        
         
     }
     
@@ -105,7 +130,7 @@ class MainViewController: UITableViewController {
     // Long press to open edit task view
     
     @IBAction func openDetailView(_ sender: Any) {
-        performSegue(withIdentifier: "editTask", sender: self)
+        performSegue(withIdentifier: "editTask", sender: indexPath.row)
     }
     
     // Delete
@@ -120,7 +145,7 @@ class MainViewController: UITableViewController {
             do {
                 try managedContext.save()
                 self.tasksArray.removeAll()
-                tableView.reloadData()
+                loadTable()
                 print("Save successful")
             } catch  {
                 print("Error performing fetch: \(error)")
@@ -135,9 +160,10 @@ class MainViewController: UITableViewController {
     @IBAction func showHelp(_ sender: Any) {
         performSegue(withIdentifier: "showHelp", sender: self)
     }
-    
-    @IBAction func logout(_ sender: Any) {
-        performSegue(withIdentifier: "logout", sender: self)
+   
+   @IBAction func logout(_ sender: Any) {
+        dismiss(animated: true)
     }
     
 }
+

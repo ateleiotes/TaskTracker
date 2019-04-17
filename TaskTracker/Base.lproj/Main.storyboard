@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qg8-XI-lb7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qg8-XI-lb7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.43"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="Dhi-NF-I4l" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="OIJ-Dv-P2E">
-                        <rect key="frame" x="0.0" y="20" width="375" height="103.5"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.11331727814654627" green="0.32279929584556255" blue="0.43549730329949243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="largeTitleTextAttributes">
@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSV-I5-Po3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="-893"/>
+            <point key="canvasLocation" x="2258" y="-886"/>
         </scene>
         <!--HelpViewController-->
         <scene sceneID="Qhy-Sh-Eww">
@@ -190,10 +190,10 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DWk-qD-Y4I" firstAttribute="bottom" secondItem="sGw-CB-GZm" secondAttribute="bottom" constant="32" id="4ps-BA-Zu4"/>
                             <constraint firstItem="CWG-1n-Hkj" firstAttribute="leading" secondItem="DWk-qD-Y4I" secondAttribute="leading" constant="19" id="AsI-T4-FzC"/>
-                            <constraint firstItem="sGw-CB-GZm" firstAttribute="leading" secondItem="DWk-qD-Y4I" secondAttribute="leading" constant="158" id="CqL-b1-4Eu"/>
+                            <constraint firstItem="DWk-qD-Y4I" firstAttribute="bottom" secondItem="sGw-CB-GZm" secondAttribute="bottom" constant="32" id="Dtx-kN-cwS"/>
                             <constraint firstItem="CWG-1n-Hkj" firstAttribute="centerY" secondItem="OFq-rl-xYa" secondAttribute="centerY" id="FT7-bh-q5A"/>
+                            <constraint firstItem="sGw-CB-GZm" firstAttribute="leading" secondItem="DWk-qD-Y4I" secondAttribute="leading" constant="158" id="cMY-fh-JDG"/>
                             <constraint firstItem="CWG-1n-Hkj" firstAttribute="centerX" secondItem="OFq-rl-xYa" secondAttribute="centerX" id="zm8-4A-h4N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DWk-qD-Y4I"/>
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXT-9h-zRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085.5999999999999" y="235.23238380809596"/>
+            <point key="canvasLocation" x="1086" y="422"/>
         </scene>
         <!--AllTasks-->
         <scene sceneID="kMc-DQ-EZc">
@@ -261,9 +261,6 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <connections>
-                        <segue destination="qg8-XI-lb7" kind="presentation" identifier="logout" id="BZQ-29-Ttr"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0C-JZ-GBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="X3R-b8-qAs">
@@ -278,7 +275,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1086" y="-457"/>
+            <point key="canvasLocation" x="1183" y="-382"/>
         </scene>
         <!--EditTaskViewController-->
         <scene sceneID="gCo-67-Vsn">
@@ -358,8 +355,7 @@
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="done:" destination="hN9-cW-I9R" eventType="touchUpInside" id="k8O-6g-a5j"/>
-                                    <action selector="doneEdit:" destination="hN9-cW-I9R" eventType="touchUpInside" id="Ra0-DK-B3g"/>
+                                    <action selector="saveEdit:" destination="hN9-cW-I9R" eventType="touchUpInside" id="ced-IS-PGy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -388,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5K8-jK-iZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="-226"/>
+            <point key="canvasLocation" x="2071" y="-125"/>
         </scene>
         <!--DetailsViewController-->
         <scene sceneID="9Rl-OQ-8Nc">
@@ -713,9 +709,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gxg-A1-J9D"/>
                     </view>
-                    <connections>
-                        <segue destination="qg8-XI-lb7" kind="presentation" identifier="backToLogin" id="tmt-yk-g3b"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OuN-Q4-g5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -729,7 +722,4 @@
         <image name="redo" width="24" height="24"/>
         <image name="undo" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="BZQ-29-Ttr"/>
-    </inferredMetricsTieBreakers>
 </document>
